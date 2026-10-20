@@ -24,3 +24,8 @@ node_modules/
 # OS specific
 .DS_Store
 .env.local
+
+# KAV-239: never commit env files (keep examples)
+.env*
+!.env.example
+!**/.env.example
