@@ -1,4 +1,4 @@
-FROM node:20-alpine AS base
+FROM node:24.22.1-alpine AS base
 
 # Install OpenSSL and other necessary libraries for Prisma
 RUN apk add --no-cache openssl openssl-dev libc6-compat
@@ -47,7 +47,7 @@ RUN pnpm prisma:generate
 RUN pnpm build
 
 # Production stage
-FROM node:20-alpine AS production
+FROM node:24.22.1-alpine AS production
 
 # Install OpenSSL and other necessary libraries for Prisma
 RUN apk add --no-cache openssl openssl-dev libc6-compat
